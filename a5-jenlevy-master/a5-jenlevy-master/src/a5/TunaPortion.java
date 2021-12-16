@@ -1,0 +1,23 @@
+package a5;
+
+public class TunaPortion extends IngredientPortionImpl {
+
+	public TunaPortion(double amount) {
+		super(new Tuna(), amount);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public IngredientPortion combine(IngredientPortion other) {
+		// TODO Auto-generated method stub
+		if (other == null) {
+			return this;
+		} else if (!(other.getIngredient().equals(this.getIngredient()))){
+			throw new IllegalArgumentException ("stupid");
+		}
+		else {
+			return new TunaPortion(other.getAmount()+this.getAmount());
+		}	}
+
+}
+
